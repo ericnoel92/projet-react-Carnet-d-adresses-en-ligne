@@ -1,0 +1,42 @@
+@import '../variables';
+
+.not_found_texte{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 7%;
+    color: $primary-color;
+
+    .error-number{
+        font-size: 288px;
+        font-weight: 700;
+
+        @include for-size(small){
+            font-size: 96px;
+            margin-top: 30%;
+        }
+    }
+
+    .texte{
+        font-size: 36px;
+        font-weight: 500;
+
+        @include for-size(small){
+            font-size: $small-font-size;
+            margin-left: 26%;
+        }
+    }
+
+    .link{
+        padding-top: 7%;
+        color: $primary-color;
+        font-size: $small-font-size;
+        font-weight: 500;
+
+        @include for-size(small){
+            font-size: 14px;
+            padding-top: 30%;
+            margin-bottom: 32%;
+        }
+    }
+}

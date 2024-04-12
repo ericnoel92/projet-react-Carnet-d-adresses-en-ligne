@@ -1,0 +1,50 @@
+@import '../variables';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    color: $primary-color;
+    padding: 2% 4%;
+
+    @include for-size(small){
+        align-items: center;
+        padding: 5% 4%;
+    }
+
+    .logo-header{
+        width: 11%;
+
+        @include for-size(small){
+            width: 37%;
+        }
+    }
+
+    ul{
+        display: flex;
+
+        @include for-size(small){
+            padding-top: 8%;
+        }
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a{
+        color: $primary-color;
+        font-size: $large-font-size;
+
+        @include for-size(small){
+            font-size: $small-font-size;
+        }
+    }
+
+    .acceuil{
+        margin-right: 55px;
+
+        @include for-size(small){
+            margin-right: 25px;
+        }
+    }
+}

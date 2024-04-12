@@ -1,0 +1,46 @@
+@import '../variables';
+
+.containt-img {
+    .filter-img, .wrapper-image-banniere {
+        border-radius: $border-raduis;
+    }
+
+    .filter-img {
+        position: absolute;
+        background-color: black;
+        opacity: 0.30;
+        width: 91.2vw;
+        height: 30vh;
+        left: 0;
+        margin-left: 4vw;
+
+        @include for-size(small) {
+            height: 18vh;
+            z-index: 2;
+            margin-left: 6.5%;
+            width: 86.8vw;
+        }
+    }
+
+    .wrapper-image-banniere {
+        overflow: hidden;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .image {
+            width: 100vw;
+            height: 100vh;
+
+            @include for-size(small) {
+                transform: translate(-35%, -25%) scale(0.6);
+            }
+        }
+
+        @include for-size(small) {
+            max-width: 100%;
+            max-height: 18vh;
+        }
+    }
+}

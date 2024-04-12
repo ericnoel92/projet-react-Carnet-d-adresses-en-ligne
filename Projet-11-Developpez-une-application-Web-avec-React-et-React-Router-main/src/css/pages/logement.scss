@@ -1,0 +1,128 @@
+@import '../variables';
+
+.container-logement{
+    margin-left: 4%;
+    margin-right: 4%;
+
+    .information{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3%;
+        color: $primary-color;
+
+        @include for-size(small) {
+            display: block;
+        }
+    
+        .information-hote{
+            width: 17%;
+
+            @include for-size(small) {
+                @include display(space-between, center);
+                flex-direction: row-reverse;
+                width: 100%;
+            }
+        }
+    
+        .title-location{
+            font-size: 36px;
+
+            @include for-size(small) {
+                font-size: $small-font-size;
+            }
+        }
+    
+        .location{
+            font-size: $small-font-size;
+
+            @include for-size(small) {
+                font-size: 14px;
+            }
+        } 
+    
+        .hote{
+            display: flex;
+            justify-content: space-between;
+            font-size: 29px;
+
+            @include for-size(small) {
+                font-size: 12px;
+                width: 27%;
+            }
+    
+            .hote-name{
+                text-align: end;
+    
+                .prenom{
+                    margin: 0;
+                }
+            }
+    
+            .wrapper-image-hote{
+                border-radius: 50%;
+                overflow: hidden;
+                width: 100px;
+                height: 100px;
+                @include display(center, center);
+
+                @include for-size(small) {
+                    width: 50px;
+                    height: 50px;
+                }
+    
+                .img-hote{
+                    transform: scale(0.8);
+
+                    @include for-size(small){
+                        transform: scale(0.5);
+                    }
+                }
+    
+    
+            }
+        }
+    
+        .stars{
+            display: flex;
+            font-size: 26px;
+            justify-content: space-between;
+
+            @include for-size(small){
+                font-size: $small-font-size;
+            }
+
+            .star-inactive{
+                color: #e3e3e3;
+            }
+        }
+
+    }
+    .description{
+        display: flex;
+        margin-bottom: 16%;
+        justify-content: space-between;
+
+        @include for-size(small) {
+            display: block;
+        }
+    
+        .my-collapse{
+            width: 45%;
+            max-height: 50px;
+
+            @include for-size(small){
+                width: 100%;
+            }
+
+    
+            .card-body{
+                background-color: $secondary-color;
+
+                ul{
+                    list-style: none;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

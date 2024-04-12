@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*, *::before, *::after {
+  font-family: "montserrat";
+}
+
+.gallery .button-chrevon-gallery, .gallery .image-count {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .gallery .button-chrevon-gallery, .gallery .image-count {
+    font-size: 35px;
+  }
+}
+.gallery .button-chrevon-gallery {
+  border: none;
+  background: none;
+  font-size: 61px;
+  top: 47%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+@media (max-width: 576px) {
+  .gallery .button-chrevon-gallery {
+    top: 25%;
+  }
+}
+.gallery .button-chrevon-left {
+  left: 5%;
+}
+.gallery .button-chrevon-right {
+  right: 5%;
+}
+.gallery .image-wrapper {
+  position: relative;
+  width: 92vw;
+  height: 415px;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 576px) {
+  .gallery .image-wrapper {
+    height: 27vh;
+  }
+}
+.gallery .image-wrapper .images-logement {
+  width: 100%;
+}
+@media (max-width: 576px) {
+  .gallery .image-wrapper .images-logement {
+    height: inherit;
+  }
+}
+.gallery .image-count {
+  top: 55%;
+  left: 50%;
+}
+@media (max-width: 576px) {
+  .gallery .image-count {
+    top: 31%;
+    left: 46%;
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=gallery.css.map */

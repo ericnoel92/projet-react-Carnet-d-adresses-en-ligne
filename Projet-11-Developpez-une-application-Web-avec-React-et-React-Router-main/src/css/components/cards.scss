@@ -1,0 +1,46 @@
+@import '../variables';
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    gap: 38px;
+    padding: 5% 0 5% 5%;
+
+    @include for-size(small){
+        display: block;
+        width: 83vw;
+    }
+    
+    .card{
+        max-height: 341px;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+
+        @include for-size(small){
+            margin-bottom: 5%;
+        }
+        
+        img{
+            height: 340px;
+        }
+
+        .card-title{
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            font-size: 1.2em;
+            background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
+        }
+    }
+}
+
+
+
+
+
+

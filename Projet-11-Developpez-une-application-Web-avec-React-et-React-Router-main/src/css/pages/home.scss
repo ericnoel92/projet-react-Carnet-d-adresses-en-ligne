@@ -1,0 +1,31 @@
+@import '../variables';
+
+.container{
+    max-width: 93vw !important;
+
+    .filter-img{
+        margin-left: 3.7vw;
+        width: 91.7vw;
+    }
+
+    .banniere-text{
+        position: absolute;
+        z-index: 3;
+        top: 28%;
+        right: 31%;
+        font-size: 48px;
+        color: white;
+
+        @include for-size(small){
+            font-size: 20px;
+            top: 24%;
+            right: 10%;
+        }
+    }
+
+    .background-home{
+        background-color: $secondary-color;
+        border-radius: $border-raduis;
+        margin-top: 5%;
+    }
+}

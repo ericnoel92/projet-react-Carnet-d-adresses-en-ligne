@@ -1,0 +1,36 @@
+@import '../variables';
+
+.my-collapse{
+    background-color: $primary-color;
+    margin-top: 2%;
+    border-radius: 10px;
+    width: 70%;
+    color: white;
+    cursor: pointer;
+    
+    @include for-size(small){
+        margin-top: 5%;
+    }
+
+    .button {
+        @include display(space-between, baseline);
+
+        .btn, svg {
+            color: white;
+            font-size: $large-font-size;
+
+            @include for-size(small) {
+                font-size: $small-font-size;
+            }
+        }
+
+        svg {
+            padding-right: 2%;
+        }
+    }
+
+    .card{
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+}

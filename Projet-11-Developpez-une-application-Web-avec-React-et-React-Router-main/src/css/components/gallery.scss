@@ -1,0 +1,66 @@
+@import '../variables';
+
+.gallery {
+    .button-chrevon-gallery, .image-count {
+        position: absolute;
+        color: white;
+        cursor: pointer;
+
+        @include for-size(small) {
+            font-size: 35px;
+        }
+    }
+
+    .button-chrevon-gallery {
+        border: none;
+        background: none;
+        font-size: 61px;
+        top: 45%;
+        transform: translateY(-50%);
+        z-index: 3;
+
+        @include for-size(small) {
+            top: 25%;
+        }
+    }
+
+    .button-chrevon-left {
+        left: 5%;
+    }
+
+    .button-chrevon-right {
+        right: 5%;
+    }
+
+    .image-wrapper {
+        position: relative;
+        width: 92vw;
+        height: 415px;
+        overflow: hidden;
+        border-radius: $border-raduis;
+        @include display(center, center);
+
+        @include for-size(small) {
+            height: 27vh;
+        }
+
+        .images-logement {
+            width: 100%;
+
+            @include for-size(small) {
+                height: inherit;
+            }
+        }
+    }
+
+    .image-count {
+        top: 55%;
+        left: 50%;
+
+        @include for-size(small) {
+            top: 31%;
+            left: 46%;
+            font-size: $small-font-size;
+        }
+    }
+}

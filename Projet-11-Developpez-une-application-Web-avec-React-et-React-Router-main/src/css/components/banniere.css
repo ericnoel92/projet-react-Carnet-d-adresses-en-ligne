@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*, *::before, *::after {
+  font-family: "montserrat";
+}
+
+.containt-img .filter-img, .containt-img .wrapper-image-banniere {
+  border-radius: 25px;
+}
+.containt-img .filter-img {
+  position: absolute;
+  background-color: black;
+  opacity: 0.3;
+  width: 91.2vw;
+  height: 30vh;
+  left: 0;
+  margin-left: 4vw;
+}
+@media (max-width: 576px) {
+  .containt-img .filter-img {
+    height: 18vh;
+    z-index: 2;
+    margin-left: 6.5%;
+    width: 86.8vw;
+  }
+}
+.containt-img .wrapper-image-banniere {
+  overflow: hidden;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containt-img .wrapper-image-banniere .image {
+  width: 100vw;
+  height: 100vh;
+}
+@media (max-width: 576px) {
+  .containt-img .wrapper-image-banniere .image {
+    transform: translate(-35%, -25%) scale(0.6);
+  }
+}
+@media (max-width: 576px) {
+  .containt-img .wrapper-image-banniere {
+    max-width: 100%;
+    max-height: 18vh;
+  }
+}/*# sourceMappingURL=banniere.css.map */

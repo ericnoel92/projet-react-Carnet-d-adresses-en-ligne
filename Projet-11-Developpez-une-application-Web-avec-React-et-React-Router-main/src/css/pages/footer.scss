@@ -1,0 +1,36 @@
+@import '../variables';
+
+.footer{
+    @include display(center, center);
+    background-color: black;
+    color: white;
+    flex-direction: column;
+    padding-top: 3%;
+    margin-top: 8%;
+
+    @include for-size(small){
+        padding-top: 8%;
+        margin-top: 34%;
+    }
+
+    .logo-footer{
+        width: 6.5%;
+        margin-bottom: 1.5% ;
+
+        @include for-size(small){
+            width: 28.5%;
+            margin-bottom: 5.5%;
+        }
+    }
+
+    .text-footer{
+        font-size: $large-font-size;
+        color: white;
+        margin-bottom: 1%;
+
+        @include for-size(small){
+            font-size: 12px;
+            margin-bottom: 7%;
+        }
+    }
+}
