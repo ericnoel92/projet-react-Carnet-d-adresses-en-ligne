@@ -21,6 +21,8 @@ const Connexion = () => {
     console.log('Formulaire soumis avec les données :', formData);
   };
 
+  console.log('Rendering Connexion component'); // Log pour vérifier le rendu du composant
+
   return (
     <div>
       <h2>Connexion</h2>

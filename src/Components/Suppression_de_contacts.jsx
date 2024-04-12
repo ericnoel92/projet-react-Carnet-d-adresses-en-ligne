@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Header extends Component {
+export default class Suppression_de_contacts extends Component {
   render() {
     return (
       <div>
