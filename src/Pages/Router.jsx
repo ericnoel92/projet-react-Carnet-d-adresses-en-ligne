@@ -1,21 +1,23 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Connexion_pages from './Pages/Connexion_pages';
-// import Creation_De_Compte from './Pages/Creation_De_Compte';
-//import Listes_De_Contactes from './Pages/Listes_De_Contactes';
-// import Page_De_Profil from './Pages/Page_De_Profil';
-
+import ConnexionPage from './ConnexionPage';
+import CreationDeComptePage from './CreationDeComptePage';
+import ListesDeContactes from './ListesDeContactes';
+import PageDeProfil from './PageDeProfil';
+import FormulaireDeCreationDeCompte from './FormulaireDeCreationDeCompte';
 
 function AppRouter() {
     return (
         <Router>
-            {/* <Header /> */}
             <Routes>
-                <Route path="/connexion" element={<Connexion_pages />} />
-                {/* Autres routes ici */}
+                <Route path="/connexion" element={<ConnexionPage />} />
+                <Route path="/creation-de-compte" element={<CreationDeComptePage />} />
+                <Route path="/listes-de-contactes" element={<ListesDeContactes />} />
+                <Route path="/page-de-profil" element={<PageDeProfil />} />
+                {/* Ajoutez d'autres routes ici */}
             </Routes>
         </Router>
     );
 }
 
 export default AppRouter;
-
