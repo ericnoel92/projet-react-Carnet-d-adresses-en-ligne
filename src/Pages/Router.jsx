@@ -1,23 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ConnexionPage from './ConnexionPage';
-import CreationDeComptePage from './CreationDeComptePage';
-import ListesDeContactes from './ListesDeContactes';
-import PageDeProfil from './PageDeProfil';
-import FormulaireDeCreationDeCompte from './FormulaireDeCreationDeCompte';
+import Profil from './Profil';
+import Nouveau_Contact from './Nouveau_Contact';
+import Connexion from './Connexion';
+import Inscription from './Inscription';
+import Maj_Utilisateur from './Maj_Utilisateur';
 
 function AppRouter() {
     return (
         <Router>
             <Routes>
-                <Route path="/connexion" element={<ConnexionPage />} />
-                <Route path="/creation-de-compte" element={<CreationDeComptePage />} />
-                <Route path="/listes-de-contactes" element={<ListesDeContactes />} />
-                <Route path="/page-de-profil" element={<PageDeProfil />} />
-                {/* Ajoutez d'autres routes ici */}
+                <Route path="/profil" element={<Profil />} />
+                <Route path="/Nouveau_Contact" element={<Nouveau_Contact />} />
+                <Route path="/Connexion" element={<Connexion />} />
+                <Route path="/Inscription" element={<Inscription />} />
+                <Route path="/Maj_Utilisateur" element={<Maj_Utilisateur />} />
             </Routes>
         </Router>
     );
 }
 
 export default AppRouter;
+

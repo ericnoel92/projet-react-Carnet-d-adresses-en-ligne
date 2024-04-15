@@ -1,0 +1,15 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Eric Noel",
+            "mail": "Eric.noel@gmail.com"
+            
+        },
+        {
+             "id": 2,
+             "name": "Comment analyser ou lire des fichiers CSV en ReactJS",
+           "mail": "Dans cet article, je vais vous apprendre comment analyser ou lire des fichiers CSV en ReactJS de la manière la plus simple possible."
+        }
+    ]
+}
