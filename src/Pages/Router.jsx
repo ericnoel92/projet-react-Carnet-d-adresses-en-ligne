@@ -5,6 +5,8 @@ import Nouveau_Contact from './Nouveau_Contact';
 import Connexion from './Connexion';
 import Inscription from './Inscription';
 import Maj_Utilisateur from './Maj_Utilisateur';
+import Maj_Contact from './Maj_Contact';
+import Home from './Home';
 
 function AppRouter() {
     return (
@@ -15,6 +17,8 @@ function AppRouter() {
                 <Route path="/Connexion" element={<Connexion />} />
                 <Route path="/Inscription" element={<Inscription />} />
                 <Route path="/Maj_Utilisateur" element={<Maj_Utilisateur />} />
+                <Route path="/Maj_Cantact" element={<Maj_Contact />} />
+                <Route path="/Home" element={<Home />} />
             </Routes>
         </Router>
     );

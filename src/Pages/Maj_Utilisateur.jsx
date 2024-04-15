@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Listes_De_Contactes extends Component {
+export default class Maj_Utilisateur extends Component {
   render() {
     return (
       <div>
