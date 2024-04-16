@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"; // Import de Link depuis react-router-dom
+
 const NewContact = () => {
     const [nom, setNom] = useState('');
     const [email, setEmail] = useState('');
@@ -60,7 +61,7 @@ const NewContact = () => {
                             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </label>
                         <Link to="/Home">
-                        <button type="button" onClick={handleFinaliserClick} style={{ marginTop: '10px' }}>Finaliser la création</button>
+                            <button type="button" onClick={handleFinaliserClick} style={{ marginTop: '10px' }}>Finaliser la création</button>
                         </Link>
                     </form>
                 </div>

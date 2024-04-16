@@ -40,7 +40,7 @@ const Datauser = () => {
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
             <div>
-              <img src="Image/Avatar.png" alt="" style={{ marginRight: '20px' }} />
+              <img src="Avatar.png" alt="" style={{ marginRight: '20px' }} />
               <p>Full Name : {user.name}</p>
               <p>Email : {user.mail}</p>
               <p>Phone Number : {user.phoneNumber}</p>
