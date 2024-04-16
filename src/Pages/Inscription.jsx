@@ -41,3 +41,4 @@ export default class Inscription extends Component {
     );
   }
 }
+// inscription post 

@@ -7,11 +7,6 @@ const UpdateUser = () => {
     file: '',
     email: ''
   });
-  const [formErrors, setFormErrors] = useState({
-    password: false,
-    file: false,
-    email: false
-  });
   const [emptyFieldsError, setEmptyFieldsError] = useState(false);
 
   useEffect(() => {
@@ -31,11 +26,6 @@ const UpdateUser = () => {
     setFormData({
       ...formData,
       [name]: value
-    });
-    // Réinitialiser les erreurs lorsqu'un champ est modifié
-    setFormErrors({
-      ...formErrors,
-      [name]: false
     });
     // Réinitialiser le message d'erreur des champs vides
     setEmptyFieldsError(false);
@@ -66,6 +56,7 @@ const UpdateUser = () => {
         file: '',
         email: ''
       });
+      // Rediriger vers la page d'accueil après la mise à jour
     })
     .catch(error => {
       console.error('Error submitting form:', error);

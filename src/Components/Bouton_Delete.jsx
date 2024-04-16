@@ -23,4 +23,5 @@ export default class Bouton_Delete extends Component {
     );
   }
 }
+// methode delete
 
