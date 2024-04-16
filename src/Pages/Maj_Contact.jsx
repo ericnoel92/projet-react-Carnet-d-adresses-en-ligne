@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from "react-router-dom"; // Import de Link depuis react-router-dom
 export default class Maj_Contact extends Component {
   render() {
     return (
@@ -19,7 +19,9 @@ export default class Maj_Contact extends Component {
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" style={styles.input} />
           </div>
+          <Link to="/Home">
           <button type="submit" style={styles.button}>Mettre à jour</button>
+          </Link>
         </form>
       </div>
     </div>
