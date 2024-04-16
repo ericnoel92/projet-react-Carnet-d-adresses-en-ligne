@@ -7,7 +7,6 @@ import Inscription from './Inscription';
 import Maj_Utilisateur from './Maj_Utilisateur';
 import Maj_Contact from './Maj_Contact';
 import Home from './Home';
-
 function AppRouter() {
     return (
         <Router>

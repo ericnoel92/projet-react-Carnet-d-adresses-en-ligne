@@ -1,6 +1,6 @@
 import React from 'react';
 import Nouveau_Contact from './Nouveau_Contact';
-console.log("Hello World");
+// console.log("Hello World");
 const NewContact = () => {
     return (
         <div>

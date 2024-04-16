@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Suppression_de_contacts extends Component {
+export default class Bouton_Update extends Component {
   render() {
     return (
       <div>
