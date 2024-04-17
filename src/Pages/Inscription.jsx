@@ -48,7 +48,7 @@ const Inscription = () => {
                 <img src="Image/logo.png" alt="Logo" />
             </div>
             <div style={{ textAlign: 'center', width: '100%' }}>
-                <h1>Connexion</h1>
+                <h1>Inscription</h1>
             </div>
             <div style={{ width: '300px', border: '1px solid #ccc', borderRadius: '5px', padding: '20px', margin: '20px' }}>
                 <form onSubmit={handleSubmit}>
