@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const UpdateUser = () => {
   const [formData, setFormData] = useState({
     password: '',
-    file: '',
+    phonenumber: '',
     email: ''
   });
   const [emptyFieldsError, setEmptyFieldsError] = useState(false);
@@ -17,7 +17,7 @@ const UpdateUser = () => {
         // Assurez-vous que les valeurs reçues ne sont pas undefined
         const initialFormData = {
           password: data.password || '',
-          file: data.file || '',
+          phonenumber: data.phonenumber || '',
           email: data.email || ''
         };
         setFormData(initialFormData);
@@ -64,7 +64,7 @@ const UpdateUser = () => {
       // Réinitialiser le formulaire après soumission
       setFormData({
         password: '',
-        file: '',
+        phonenumber: '',
         email: ''
       });
       // Rediriger vers la page d'accueil après la mise à jour
@@ -101,12 +101,12 @@ const UpdateUser = () => {
             />
           </div>
           <div>
-            <label htmlFor="file">File:</label>
+            <label htmlFor="phone number">phone number:</label>
             <input
-              type="file"
-              id="file"
-              name="file"
-              value={formData.file}
+              type="number"
+              id="number"
+              name="phonenumber"
+              value={formData.phonenumber}
               onChange={handleChange}
               style={styles.input}
             />
