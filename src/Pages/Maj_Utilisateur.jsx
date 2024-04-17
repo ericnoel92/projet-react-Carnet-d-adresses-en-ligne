@@ -14,7 +14,13 @@ const UpdateUser = () => {
     fetch('http://localhost:3030/users')
       .then(response => response.json())
       .then(data => {
-        setFormData(data);
+        // Assurez-vous que les valeurs reçues ne sont pas undefined
+        const initialFormData = {
+          password: data.password || '',
+          file: data.file || '',
+          email: data.email || ''
+        };
+        setFormData(initialFormData);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -34,8 +40,13 @@ const UpdateUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Vérifier si tous les champs sont remplis
-    const hasEmptyFields = Object.values(formData).some(value => value === '');
-    if (hasEmptyFields) {
+    const isFormValid = Object.values(formData).every(value => {
+      if (typeof value === 'string') {
+        return value.trim() !== '';
+      }
+      return true;
+    });
+    if (!isFormValid) {
       // Afficher le message d'erreur si des champs sont vides
       setEmptyFieldsError(true);
       return; // Empêcher la soumission du formulaire
@@ -63,7 +74,12 @@ const UpdateUser = () => {
     });
   };
 
-  const isFormValid = Object.values(formData).every(value => value !== '');
+  const isFormValid = Object.values(formData).every(value => {
+    if (typeof value === 'string') {
+      return value.trim() !== '';
+    }
+    return true;
+  });
 
   return (
     <div>
@@ -108,7 +124,7 @@ const UpdateUser = () => {
           </div>
           {emptyFieldsError && <span style={{ color: 'red' }}>Veuillez remplir tous les champs.</span>}
           <Link to="/Home" style={{ textDecoration: 'none' }}>
-            <button type="submit" style={{ ...styles.button, opacity: isFormValid ? '1' : '0.5' }} disabled={!isFormValid}>Mettre à jour</button>
+            <button type="submit" style={styles.button} disabled={!isFormValid}>Mettre à jour</button>
           </Link>
         </form>
       </div>
