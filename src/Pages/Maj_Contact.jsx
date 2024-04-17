@@ -1,72 +1,86 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-const Maj_Contact = () => {
+const UpdateUser = () => {
   const [formData, setFormData] = useState({
-    file: '',
     password: '',
+    phonenumber: '',
     email: ''
   });
-  const [formValid, setFormValid] = useState(false); // État pour vérifier la validité du formulaire
- 
+  const [emptyFieldsError, setEmptyFieldsError] = useState(false);
+
   useEffect(() => {
     // Effectue une requête GET à l'API pour récupérer les données initiales
     fetch('http://localhost:3030/users')
       .then(response => response.json())
       .then(data => {
-        setFormData(data);
+        // Assurez-vous que les valeurs reçues ne sont pas undefined
+        const initialFormData = {
+          password: data.password || '',
+          phonenumber: data.phonenumber || '',
+          email: data.email || ''
+        };
+        setFormData(initialFormData);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
   }, []);
- 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value
     });
+    // Réinitialiser le message d'erreur des champs vides
+    setEmptyFieldsError(false);
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Vérifier si tous les champs sont remplis
-    if (formData.email && formData.password && formData.file) {
-      // Envoyer les données du formulaire à l'API
-      fetch('http://localhost:3030/users', {
-        method: 'Put',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Réinitialiser le formulaire après soumission
-        setFormData({
-          file: '',
-          password: '',
-          email: ''
-        });
-      })
-      .catch(error => {
-        console.error('Error submitting form:', error);
-      });
-    } else {
-      alert("Veuillez remplir tous les champs !");
+    const isFormValid = Object.values(formData).every(value => {
+      if (typeof value === 'string') {
+        return value.trim() !== '';
+      }
+      return true;
+    });
+    if (!isFormValid) {
+      // Afficher le message d'erreur si des champs sont vides
+      setEmptyFieldsError(true);
+      return; // Empêcher la soumission du formulaire
     }
+    // Envoyer les données du formulaire à l'API
+    fetch('http://localhost:3030/users', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Réinitialiser le formulaire après soumission
+      setFormData({
+        password: '',
+        phonenumber: '',
+        email: ''
+      });
+      // Rediriger vers la page d'accueil après la mise à jour
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error);
+    });
   };
 
-  // Vérifier si tous les champs sont remplis
-  useEffect(() => {
-    if (formData.email && formData.password && formData.file) {
-      setFormValid(true);
-    } else {
-      setFormValid(false);
+  const isFormValid = Object.values(formData).every(value => {
+    if (typeof value === 'string') {
+      return value.trim() !== '';
     }
-  }, [formData.email, formData.password, formData.file]);
- 
+    return true;
+  });
+
   return (
     <div>
       <div style={styles.header}>
@@ -74,7 +88,7 @@ const Maj_Contact = () => {
       </div>
       <div style={styles.container}>
         <h1 style={styles.title}>Mise à jour Contact</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={styles.form}>
           <div>
             <label htmlFor="email">Email:</label>
             <input
@@ -85,11 +99,14 @@ const Maj_Contact = () => {
               onChange={handleChange}
               style={styles.input}
             />
+          </div>
+          <div>
+            <label htmlFor="phone number">phone number:</label>
             <input
-              type="file"
-              id="file"
-              name="file"
-              value={formData.file}
+              type="number"
+              id="number"
+              name="phonenumber"
+              value={formData.phonenumber}
               onChange={handleChange}
               style={styles.input}
             />
@@ -105,14 +122,17 @@ const Maj_Contact = () => {
               style={styles.input}
             />
           </div>
-          <Link to="/Home">
-            <button type="submit" style={styles.button} disabled={!formValid}>Mettre à jour</button>
+          {emptyFieldsError && <span style={{ color: 'red' }}>Veuillez remplir tous les champs.</span>}
+          <Link to="/Home" style={{ textDecoration: 'none' }}>
+            <button type="submit" style={styles.button} disabled={!isFormValid}>Mettre à jour</button>
           </Link>
         </form>
       </div>
     </div>
   );
 };
+
+export default UpdateUser;
 
 const styles = {
   header: {
@@ -127,6 +147,11 @@ const styles = {
   title: {
     marginBottom: '20px',
   },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   input: {
     marginBottom: '10px',
     padding: '8px',
@@ -140,8 +165,7 @@ const styles = {
     borderRadius: '4px',
     border: 'none',
     cursor: 'pointer',
+    textDecoration: 'none',
   },
 };
-
-export default Maj_Contact;
 // fais
