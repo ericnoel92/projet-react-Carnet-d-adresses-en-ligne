@@ -99,11 +99,13 @@ export default class Home extends Component {
           <div style={searchBarStyle}>
             <input type="text" placeholder="Rechercher..." />
           </div>
+          {/* Ajout du bouton "Connexion" avec un lien */}
+          <Link to="/connexion">
+            <button style={buttonStyle}>Connexion</button>
+          </Link>
         </div>
         <Link to="/Nouveau_Contact">
-        <button style={buttonStyle}>
-          Ajouter un nouveau contact
-        </button>
+          <button style={buttonStyle}>Ajouter un nouveau contact</button>
         </Link>
         <div style={avatarContainerStyle}>
           <div>
@@ -120,38 +122,6 @@ export default class Home extends Component {
               </Link>
             </div>
           </div>
-          {/* <div>
-            <img src="Avatar.png" alt="" style={avatarStyle} />
-            <div style={userInfoStyle}>
-              <p>Full Name</p>
-              <p>Email</p>
-              <p>Address</p>
-              <Bouton_Delete />
-              <Bouton_Update updateButtonStyle={updateButtonStyle} />
-              <button style={actionButtonStyle} onClick={this.handleDelete}>
-                Delete
-              </button>
-              <button style={updateButtonStyle} onClick={this.handleUpdate}>
-                Update
-              </button>
-            </div>
-          </div> */}
-          {/* <div>
-            <img src="Avatar.png" alt="" style={avatarStyle} />
-            <div style={userInfoStyle}>
-              <p>Full Name</p>
-              <p>Email</p>
-              <p>Address</p>
-              <Bouton_Delete />
-              <Bouton_Update updateButtonStyle={updateButtonStyle} />
-              <button style={actionButtonStyle} onClick={this.handleDelete}>
-                Delete
-              </button>
-              <button style={updateButtonStyle} onClick={this.handleUpdate}>
-                Update
-              </button>
-            </div>
-          </div> */}
         </div>
       </div>
     );

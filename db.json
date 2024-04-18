@@ -162,6 +162,13 @@
       "lastName": "winchecter",
       "email": "billy@gmail.com",
       "password": "win"
+    },
+    {
+      "id": "a88c",
+      "firstName": "sam",
+      "lastName": "winchester",
+      "email": "winchester@gmail.com",
+      "password": "win4"
     }
   ]
 }
