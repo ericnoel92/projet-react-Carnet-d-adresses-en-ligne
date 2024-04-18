@@ -36,7 +36,7 @@ const Datauser = () => {
         <div key={user.id} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           <div style={{ backgroundColor: 'black', padding: '20px', display: 'flex', alignItems: 'center' }}>
             <img src="Image/logo.png" alt="Logo" style={{ marginRight: '20px' }} />
-            <Link to="/Nouveau_Contact" style={{ textDecoration: 'none', color: 'white', backgroundColor: 'blue', padding: '10px', borderRadius: '5px', marginRight: '10px' }}>Add new Contact</Link>
+            <Link to="/Inscription" style={{ textDecoration: 'none', color: 'white', backgroundColor: 'blue', padding: '10px', borderRadius: '5px', marginRight: '10px' }}>Add new Contact</Link>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
             <div>

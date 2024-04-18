@@ -71,8 +71,8 @@ const Inscription = () => {
                     <button type="submit">Submit</button>
                 </form>
             </div>
-            <Link to="/Profil">
-                <button>Go to Profile</button>
+            <Link to="/Home">
+                <button>Go to Home</button>
             </Link>
         </div>
     );
